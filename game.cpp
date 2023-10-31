@@ -92,3 +92,21 @@ void printMaze(const std::vector<std::vector<Cell>>& maze) {
     }
 }
 
+int main() {
+    srand(static_cast<unsigned>(time(nullptr));
+
+    std::vector<std::vector<Cell>> maze(rows, std::vector<Cell>(cols, Cell::WALL));
+
+    generateMaze(maze);
+
+    // Set start and goal
+    maze[1][1] = Cell::START;
+    maze[rows - 2][cols - 2] = Cell::GOAL;
+
+    std::cout << "Randomly generated maze:\n";
+    printMaze(maze);
+
+    // Maze solving algorithms can be implemented here (A* search, Dijkstra, BFS, etc.)
+
+    return 0;
+}
